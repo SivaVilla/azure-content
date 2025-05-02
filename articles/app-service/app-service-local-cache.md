@@ -36,7 +36,7 @@ Web applications running on Local Cache enjoy the following benefits:
 
 ## How Does Local Cache Change the behaviour of App Service
 
-* The local cache is a copy of the /site and /siteextensions folders of the web application and is created on the local VM instance on web application startup. The size of the local cache per web application is limited to 300 MB by default but can be increased up to 1 GB. 
+* The local cache is a copy of the /site and /siteextensions folders of the web application and is created on the local VM instance on web application startup. The size of the local cache per web application is limited to 1 GB by default but can be increased up to 2 GB. 
 * The local cache is read-write however any modifications will be discarded when the web application moves virtual machines or gets restarted. The local cache should not be used for applications that persist mission critical data in the content store. 
 * Web applications can continue to write log files and diagnostic data as they do currently. Log files and data however are stored locally on the VM and are then copied over periodically to the shared content store. The copy over to the shared content store is a best case effort and write backs could be lost due to a sudden crash of a VM instance. 
 * There is a change in the folder structure of the LogFiles and Data folders for web apps that use Local Cache.  There are now sub-folders in the storage "LogFiles" and "Data" folders following the naming pattern of "unique identifier" + timestamp. Each of the sub folders correspond to a VM instance where the web application is running or has run on.  
